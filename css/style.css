@@ -1,0 +1,173 @@
+:root {
+  --box1-color: lightseagreen;
+  --box2-color: lightcoral;
+  --box3-color: lightblue;
+  --box4-color: lightsteelblue;
+  --box5-color: lightgreen;
+  --box6-color: lightsalmon;
+  --hamburger-color: #333;
+  --global-transition: all 1s;
+}
+
+body {
+  width: 100vw;
+  background: #eee;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(2, 150px);
+  grid-gap: 50px;
+  justify-content: center;
+}
+
+.box,
+.icon-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.box-1 {
+  background-color: var(--box1-color);
+}
+
+.box-2 {
+  background-color: var(--box2-color);
+}
+
+.box-3 {
+  background-color: var(--box3-color);
+}
+
+.box-4 {
+  background-color: var(--box4-color);
+}
+
+.box-5 {
+  background-color: var(--box5-color);
+}
+
+.box-6 {
+  background-color: var(--box6-color);
+}
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+}
+
+.icon-hamburger {
+  background: var(--hamburger-color);
+  width: 40px;
+  height: 5px;
+  border-radius: 2.5px;
+  position: relative;
+  transition: var(--global-transition);
+}
+.icon-hamburger:before,
+.icon-hamburger:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 5px;
+  border-radius: 2.5px;
+  background: #333;
+  top: -0.8em;
+  transition: var(--global-transition);
+}
+
+.icon-hamburger:after {
+  top: 0.8em;
+  transition: var(--global-transition);
+}
+
+/* Animacion Simple */
+.box-1:hover .icon-hamburger::before {
+  transition: var(--global-transition);
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.box-1:hover .icon-hamburger::after {
+  transition: var(--global-transition);
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.box-1:hover .icon-hamburger {
+  transition: var(--global-transition);
+  background-color: var(--box1-color);
+}
+
+/* Animación Left Arrow */
+.box-2:hover .icon-hamburger::before {
+  transition: var(--global-transition);
+  width: 30px;
+  transform: rotate(-30deg);
+  top: -8px;
+}
+
+.box-2:hover .icon-hamburger::after {
+  transition: var(--global-transition);
+  width: 30px;
+  transform: rotate(30deg);
+  top: 8px;
+}
+
+/* Animación Right Arrow */
+.box-3:hover .icon-hamburger::before {
+  transition: var(--global-transition);
+  width: 30px;
+  left: 10px;
+  transform: rotate(30deg);
+  top: -8px;
+}
+
+.box-3:hover .icon-hamburger::after {
+  transition: var(--global-transition);
+  width: 30px;
+  left: 10px;
+  transform: rotate(-30deg);
+  top: 8px;
+}
+
+/* Animación Compress */
+.box-4:hover .icon-hamburger::before,
+.box-4:hover .icon-hamburger::after {
+  transition: var(--global-transition);
+  top: 0;
+}
+/* Animación Rotate */
+
+.box-5:hover .icon-hamburger {
+  transition: var(--global-transition);
+  transform: rotate(90deg);
+  top: 0;
+}
+
+/* Animación Plus */
+
+.box-6:hover .icon-hamburger::before {
+  transition: var(--global-transition);
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.box-6:hover .icon-hamburger::after {
+  transition: var(--global-transition);
+  top: 0;
+  transform: rotate(0deg);
+}
+
+.box-6:hover .icon-hamburger {
+  transition: var(--global-transition);
+  background-color: var(--box6-color);
+}
+
